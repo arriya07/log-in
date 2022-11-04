@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import liff from '@line/liff';
+import 'antd/dist/antd.css';
 import { Button } from 'antd';
 
 export default function Home() {
