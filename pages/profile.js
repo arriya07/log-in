@@ -28,7 +28,7 @@ export default function Profile() {
   return (
         <section>
             <Head>
-                <title>My Profile</title>
+                <title style={{ textAlign: "center" }} >My Profile</title>
             </Head>
             <h1>Profile</h1>
             <div style={{ textAlign: "center" }} >
