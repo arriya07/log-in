@@ -3,13 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 export default function Profile() {
-    const [profile, setProfile] = useState({})
+    const [profile, setProfile] = useState({}) //useState เป็นการเรียกใช้งาน state และ การเปลี่ยนแปลงค่า state
     let liff
     useEffect(() => {
         liff = require('@line/liff')
         const lineliff = async () => {
             try {
-                await liff.init({ liffId: `${process.env.NEXT_PUBLIC_LIFF_ID}` });
+                await liff.init({ liffId: `${process.env.NEXT_PUBLIC_LIFF_ID}` }); //
             } catch (error) {
                 console.error('liff init error', error.message)
             }
@@ -27,11 +27,11 @@ export default function Profile() {
 
   return (
         <section>
+            <div style={{ textAlign: "center" }} >
             <Head>
                 <title style={{ textAlign: "center" }} >My Profile</title>
             </Head>
             <h1>Profile</h1>
-            <div style={{ textAlign: "center" }} >
                 {profile.pictureUrl && <Image
                     src={profile.pictureUrl}
                     alt={profile.displayName}
