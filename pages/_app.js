@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(async () => {
     const liff = (await import('@line/liff')).default
     try {
-      await liff.init('1657620623-51egdbDD');
+      await liff.init(process.env.NEXT_PUBLIC_LIFF_ID);
     } catch (error) {
       console.error('liff init error', error.message)
     }
