@@ -29,14 +29,14 @@ export default function Profile() {
         <section>
             <div style={{ textAlign: "center" }} >
             <Head>
-                <title style={{ textAlign: "center" }} >My Profile</title>
+                <title>My Profile</title>
             </Head>
             <h1>Profile</h1>
                 {profile.pictureUrl && <Image
                     src={profile.pictureUrl}
                     alt={profile.displayName}
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
                 />}
                 <div>Name: {profile.displayName}</div>
             </div>
