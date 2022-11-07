@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import liff from '@line/liff';
 import 'antd/dist/antd.css';
 import { Button } from 'antd';
-import './index.css';
+
 
 export default function Home() {
   return (
