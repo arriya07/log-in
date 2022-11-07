@@ -31,7 +31,7 @@ export default function Profile() {
                 <title>My Profile</title>
             </Head>
             <h1>Profile</h1>
-            <div>
+            <div style={{ textAlign: "center" }} >
                 {profile.pictureUrl && <Image
                     src={profile.pictureUrl}
                     alt={profile.displayName}
