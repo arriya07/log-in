@@ -8,7 +8,8 @@ import './index.css';
 
 export default function Home() {
   return (
-    <div  style={{ width: 400, margin: '100px auto' }}>
+    <div>
+      <h1 >Angular with LINE Login</h1>
       <h1 >Angular with LINE Login</h1>
       <b>id token: </b>
       <b>display name: </b>
