@@ -20,7 +20,7 @@ function getItem(label, key, icon, children) {
     };
 }
 const items = [
-    getItem('NemeUser 1', '1', <UserOutlined />),
+    getItem('NemeUser 0', '0', <UserOutlined />),
     getItem('Option 1', '1', <PieChartOutlined />),
     getItem('Option 2', '2', <DesktopOutlined />),
     getItem('User', 'sub1', <UserOutlined />, [
