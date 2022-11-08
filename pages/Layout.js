@@ -1,8 +1,6 @@
 import 'antd/dist/antd.css'
 import {
     DesktopOutlined,
-    FileOutlined,
-    PieChartOutlined,
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons';
@@ -20,8 +18,8 @@ function getItem(label, key, icon, children) {
     };
 }
 const items = [
-    getItem('NemeUser', '0', <UserOutlined />),
-    getItem('User Profil', '1', <PieChartOutlined />),
+    getItem('NemeUser','0',),
+    getItem('User Profil','1',<UserOutlined />),
     getItem('Option 2', '2', <DesktopOutlined />),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
