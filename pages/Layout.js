@@ -5,6 +5,7 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+import Link from 'next/link'
 
 
 
@@ -20,7 +21,7 @@ function getItem(label, key, icon, children,Link) {
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('Usere Profil','1',<UserOutlined />,<link href={"/profile"}/>),
+    getItem('Usere Profil','1',<UserOutlined />,<Link href={"/profile"}/>),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
