@@ -10,17 +10,18 @@ import Profile from './profile';
 
 
 const { Header, Content, Footer, Sider } = Layout;
-function getItem(label,key, icon, children,) {
+function getItem(label,key, icon, children,RouteApp ) {
     return {
         icon,
         children,
         label,
         key,
+        RouteApp ,
     };
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('Usere Profil','./profile',<UserOutlined />),
+    getItem('Usere Profil','1',<UserOutlined />,<RouteApp path={'/profile'} component={Profile} />),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
