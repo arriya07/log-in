@@ -10,18 +10,17 @@ import Link from 'next/link'
 
 
 const { Header, Content, Footer, Sider } = Layout;
-function getItem(label, key, icon, children,Link) {
+function getItem(label, key, icon, children,) {
     return {
         key,
         icon,
         children,
         label,
-        Link,
     };
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('Usere Profil','1',<UserOutlined />,<Link href={"/profile"}/>),
+    getItem('Usere Profil','/profil',<UserOutlined />),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
