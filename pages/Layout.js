@@ -7,6 +7,7 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import React, { useState } from 'react';
 
 
@@ -19,24 +20,30 @@ function getItem(label, key, icon, children) {
         label,
     };
 }
-const items = [
-    getItem('NemeUser', '0', <UserOutlined />),
-    getItem('User Profil', '1', <PieChartOutlined />),
-    getItem('Option 2', '2', <DesktopOutlined />),
-    getItem('Team', 'sub2', <TeamOutlined />, 
-    [getItem('Team 1', '6'), 
-    getItem('Team 2', '8')]),
 
-];
 const App = () => {
     const [collapsed, setCollapsed] = useState(false);
     return (
         <Layout style={{minHeight: '100vh',}}>
 
-            <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} /> 
-            </Sider>
+<Sider
+                        collapsible
+                        collapsed={this.state.collapsed}
+                        onCollapse={this.onCollapse}>
+                        <div className="logo" />
+                        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+                            <Menu.Item key="1">
+                                <Icon type="pie-chart" />
+                                <span>Deshboard</span>
+                                <Link to="/" />
+                            </Menu.Item>
+                            <Menu.Item key="2">
+                                <Icon type="desktop" />
+                                <span>Meseros</span>
+                                <Link to="/meseros" />
+                            </Menu.Item>
+                        </Menu>
+                    </Sider>
             {/*Sider แถบด้านข้าง จะทำการประกาศ items เมนูไว้ข้างบนแล้วดึงมาใช้ ใน <Menu/>*/}
 
             <Layout className="site-layout">
