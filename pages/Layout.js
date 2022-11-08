@@ -8,6 +8,8 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+
+
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
     return {
@@ -18,7 +20,7 @@ function getItem(label, key, icon, children) {
     };
 }
 const items = [
-    getItem('' ),
+    getItem('NemeUser 1', '1', <UserOutlined />),
     getItem('Option 1', '1', <PieChartOutlined />),
     getItem('Option 2', '2', <DesktopOutlined />),
     getItem('User', 'sub1', <UserOutlined />, [
