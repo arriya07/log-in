@@ -29,7 +29,7 @@ export default function Home() {
         </p>
 
         <p className={styles.description}>
-         <Link href="/layout">
+         <Link href="/Layout">
           Click To See My Layout
         </Link>
         </p>
