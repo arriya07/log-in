@@ -1,78 +1,65 @@
-import 'antd/dist/antd.css'
 import {
-    TeamOutlined,
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    UploadOutlined,
     UserOutlined,
-} from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu } from 'antd';
-import React, { useState } from 'react';
-
-
-
-
-const { Header, Content, Footer, Sider } = Layout;
-function getItem(label,key, icon, children,RouteApp ) {
-    return {
-        icon,
-        children,
-        label,
-        key,
-        RouteApp ,
-    };
-}
-const items = [
-    getItem('NemeUser','0',),
-    getItem('Usere Profil','1',<UserOutlined />),
-    getItem('Team', 'sub2', <TeamOutlined />, 
-    [getItem('Team 1', '6'), 
-    getItem('Team 2', '8')]),
-
-];
-const App = () => {
+    VideoCameraOutlined,
+  } from '@ant-design/icons';
+  import { Layout, Menu } from 'antd';
+  import React, { useState } from 'react';
+  const { Header, Sider, Content } = Layout;
+  
+  export default function Home() {
     const [collapsed, setCollapsed] = useState(false);
     return (
-        <Layout style={{minHeight: '100vh',}}>
-
-            <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} /> 
-            </Sider>
-            {/*Sider แถบด้านข้าง จะทำการประกาศ items เมนูไว้ข้างบนแล้วดึงมาใช้ ใน <Menu/>*/}
-
-            <Layout className="site-layout">
-                {/* <Header>
-                    <div className="logo" />
-                    <Menu
-                        theme="dark"
-                        mode="horizontal"
-                        defaultSelectedKeys={['2']}
-                        items={new Array().fill(null).map((_, index) => {
-                            const key = index + 1;
-                            return {
-                                key,
-                                label: ` ${key}`,
-                            };
-                        })}
-                    />
-                </Header> */}
-                {/*Header แถบด้านบน กำหนดจำนวนโดยใช้  Array(X) ว่าต้องการเมนูอีกตัว */}
-
-                <Content style={{  margin: '0 16px',}}>
-                    <Breadcrumb style={{ margin: '16px 0', }} >
-                        <Breadcrumb.Item>User</Breadcrumb.Item>
-                        <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                    </Breadcrumb>
-                    <div className="site-layout-background" style={{ padding: 40,minHeight: 460,}}>
-                        Bill is a cat.
-                    </div>
-                </Content>
-                 {/*Content ส่วนเนื้อตรงกลาง */}
-
-                <Footer style={{ textAlign: 'center', }} >
-                    Build ตอนไหนตื่นเต้นทุกที่
-                </Footer>
-
-            </Layout>
+        <Layout className="layout">
+          <Sider trigger={null} collapsible collapsed={collapsed}>
+            <div className="logo" />
+            <Menu
+                theme="dark"
+                mode="inline"
+                defaultSelectedKeys={['1']}
+                items={[
+                  {
+                    key: '1',
+                    icon: <UserOutlined />,
+                    label: 'nav 1',
+                  },
+                  {
+                    key: '2',
+                    icon: <VideoCameraOutlined />,
+                    label: 'nav 2',
+                  },
+                  {
+                    key: '3',
+                    icon: <UploadOutlined />,
+                    label: 'nav 3',
+                  },
+                ]}
+            />
+          </Sider>
+          <Layout className="site-layout">
+            <Header
+                className="site-layout-background"
+                style={{
+                  padding: 0,
+                }}
+            >
+              {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                className: 'trigger',
+                onClick: () => setCollapsed(!collapsed),
+              })}
+            </Header>
+            <Content
+                className="site-layout-background"
+                style={{
+                  margin: '24px 16px',
+                  padding: 24,
+                }}
+            >
+              Content
+            </Content>
+          </Layout>
         </Layout>
-    );
-};
-export default App;
+    )
+  }
