@@ -28,6 +28,12 @@ export default function Home() {
         </Link>
         </p>
 
+        <p className={styles.description}>
+         <Link href="/layout">
+          Click To See My Layout
+        </Link>
+        </p>
+
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Documentation &rarr;</h3>
