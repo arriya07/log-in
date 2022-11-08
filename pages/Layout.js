@@ -9,18 +9,18 @@ import React, { useState } from 'react';
 
 
 const { Header, Content, Footer, Sider } = Layout;
-function getItem(label, key, icon, children) {
+function getItem(label, key, icon, children,link) {
     return {
         key,
         icon,
         children,
         label,
+        link,
     };
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('User Profil','1',<UserOutlined />),
-    getItem('Option 2', '2', <DesktopOutlined />),
+    getItem('User Profil','1',<UserOutlined />,<Link to="/profile" replace />),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
