@@ -20,7 +20,7 @@ function getItem(label, key, icon, children,) {
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('Usere Profil','/profil',<UserOutlined />),
+    getItem('Usere Profil','1',<UserOutlined />),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
