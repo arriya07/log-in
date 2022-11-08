@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+import Link from 'next/link'
 const { Header, Sider, Content } = Layout;
 
 export default function Home() {
@@ -22,9 +23,12 @@ export default function Home() {
               defaultSelectedKeys={['1']}
               items={[
                 {
-                  key: '1',
+                  key: '/profile',
                   icon: <UserOutlined />,
                   label: 'nav 1',
+                  
+
+
                 },
                 {
                   key: '2',
