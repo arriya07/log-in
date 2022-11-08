@@ -1,6 +1,15 @@
 import 'antd/dist/antd.css';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React from 'react';
+import {
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    UploadOutlined,
+    UserOutlined,
+    VideoCameraOutlined,
+  } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import React, { useState } from 'react';
 
 const { Header, Content, Footer } = Layout;
 
@@ -46,6 +55,7 @@ const App = () => (
           ]}
         />
       </Sider>
+    
     <Content
       style={{
         padding: '0 50px',
