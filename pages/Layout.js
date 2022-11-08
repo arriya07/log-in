@@ -5,14 +5,14 @@ import React from 'react';
 const { Header, Content, Footer } = Layout;
 
 const App = () => (
-  <Layout className="layout">
-    <Header>
-      <div className="logo" />
+  <Layout className="layout"> {/*เริ่มตัว layout  */}
+    <Header> {/*ส่วน Header หรือแทบเมนู  */}
+      <div className="logo" />  
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['2']}
-        items={new Array(15).fill(null).map((_, index) => {
+        items={new Array(8).fill(null).map((_, index) => { {/* Array(x) ไว้กำหนดจำนวนเมนู */}
           const key = index + 1;
           return {
             key,
