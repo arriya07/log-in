@@ -5,6 +5,7 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+import RouteApp from './components/App';
 import Profile from './profile';
 
 
