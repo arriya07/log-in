@@ -25,7 +25,9 @@ const items = [
         getItem('Bill', '4'),
         getItem('Alex', '5'),
     ]),
-    getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
+    getItem('Team', 'sub2', <TeamOutlined />, 
+    [getItem('Team 1', '6'), 
+    getItem('Team 2', '8')]),
     getItem('Files', '9', <FileOutlined />),
 ];
 const App = () => {
@@ -73,7 +75,7 @@ const App = () => {
                         className="site-layout-background"
                         style={{
                             padding: 40,
-                            minHeight: 360,
+                            minHeight: 460,
                         }}
                     >
                         Bill is a cat.
@@ -84,7 +86,7 @@ const App = () => {
                         textAlign: 'center',
                     }}
                 >
-                    Ant Design ©2018 Created by Ant UED
+                    Build ตอนไหนตื่นเต้นทุกที่
                 </Footer>
             </Layout>
         </Layout>
