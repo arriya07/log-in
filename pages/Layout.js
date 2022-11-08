@@ -5,8 +5,7 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
-import RouteApp from './components/App';
-import Profile from './profile';
+
 
 
 
@@ -22,7 +21,7 @@ function getItem(label,key, icon, children,RouteApp ) {
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('Usere Profil','1',<UserOutlined />,<RouteApp path={'/profile'} component={Profile} />),
+    getItem('Usere Profil','1',<UserOutlined />),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
