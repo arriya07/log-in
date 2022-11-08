@@ -1,4 +1,3 @@
-import 'antd/dist/antd.css'
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
@@ -55,7 +54,7 @@ import {
                 className="site-layout-background"
                 style={{
                   margin: '24px 16px',
-                  padding: 24,
+                  padding: 50,
                 }}
             >
               Content
