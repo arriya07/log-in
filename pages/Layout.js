@@ -43,21 +43,21 @@ const App = () => {
             {/*Sider แถบด้านข้าง จะทำการประกาศ items เมนูไว้ข้างบนแล้วดึงมาใช้ ใน <Menu/>*/}
 
             <Layout className="site-layout">
-                {/* <Header>
+                <Header>
                     <div className="logo" />
                     <Menu
                         theme="dark"
                         mode="horizontal"
                         defaultSelectedKeys={['2']}
-                        items={new Array(10).fill(null).map((_, index) => {
+                        items={new Array(1).fill(null).map((_, index) => {
                             const key = index + 1;
                             return {
                                 key,
-                                label: `nav ${key}`,
+                                label: ` ${key}`,
                             };
                         })}
                     />
-                </Header> */}
+                </Header>
                 {/*Header แถบด้านบน กำหนดจำนวนโดยใช้  Array(X) ว่าต้องการเมนูอีกตัว */}
 
                 <Content style={{  margin: '0 16px',}}>
