@@ -12,6 +12,7 @@ const { Header, Sider, Content } = Layout;
 const App = () => {
     const [collapsed, setCollapsed] = useState(false);
     return (
+        <Layout>
             <Layout className="site-layout">
                 <Header
                     className="site-layout-background"
@@ -24,7 +25,7 @@ const App = () => {
                         onClick: () => setCollapsed(!collapsed),
                     })}
                 </Header>
-                <Sider trigger={null} collapsible collapsed={collapsed}>
+                 <Sider trigger={null} collapsible collapsed={collapsed}>
                 <div className="logo" />
                 <Menu
                     theme="dark"
