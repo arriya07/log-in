@@ -1,75 +1,79 @@
 import 'antd/dist/antd.css'
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Layout, Menu, Icon } from 'antd';
+import {
+    DesktopOutlined,
+    FileOutlined,
+    PieChartOutlined,
+    TeamOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
+import { Breadcrumb, Layout, Menu } from 'antd';
+import React, { useState } from 'react';
 
-import Dashboard from './containers/Dashboard/Dashboard';
-import Meseros from './containers/Meseros/Meseros';
 
 const { Header, Content, Footer, Sider } = Layout;
-const SubMenu = Menu.SubMenu;
-
-class RouterApp extends Component {
-
-    state = {
-        collapsed: false,
+function getItem(label, key, icon, children) {
+    return {
+        key,
+        icon,
+        children,
+        label,
     };
-
-    onCollapse = (collapsed) => {
-        this.setState({ collapsed });
-    }
-    toggle = () => {
-        this.setState({
-            collapsed: !this.state.collapsed,
-        });
-    }
-
-    render() {
-        return (
-            <Router>
-                <Layout style={{ minHeight: '100vh' }}>
-
-                    <Sider
-                        collapsible
-                        collapsed={this.state.collapsed}
-                        onCollapse={this.onCollapse}>
-                        <div className="logo" />
-                        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                            <Menu.Item key="1">
-                                <Icon type="pie-chart" />
-                                <span>Deshboard</span>
-                                <Link to="/" />
-                            </Menu.Item>
-                            <Menu.Item key="2">
-                                <Icon type="desktop" />
-                                <span>Meseros</span>
-                                <Link to="/meseros" />
-                            </Menu.Item>
-                        </Menu>
-                    </Sider>
-                    <Layout>
-                        <Header style={{ background: '#fff', padding: 0, paddingLeft: 16 }}>
-                            <Icon
-                                className="trigger"
-                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                                style={{ cursor: 'pointer' }}
-                                onClick={this.toggle}
-                            />
-                        </Header>
-                        <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-                            <Route exact path="/" component={Dashboard} />
-                            <Route path="/meseros" component={Meseros} />
-                        </Content>
-
-                    </Layout>
-
-                </Layout>
-            </Router>
-        );
-    }
 }
+const items = [
+    getItem('NemeUser', '0', <UserOutlined />),
+    getItem('User Profil', '1', <PieChartOutlined />),
+    getItem('Option 2', '2', <DesktopOutlined />),
+    getItem('Team', 'sub2', <TeamOutlined />, 
+    [getItem('Team 1', '6'), 
+    getItem('Team 2', '8')]),
 
+];
+const App = () => {
+    const [collapsed, setCollapsed] = useState(false);
+    return (
+        <Layout style={{minHeight: '100vh',}}>
 
-export default RouterApp;
+            <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+                <div className="logo" />
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} /> 
+            </Sider>
+            {/*Sider แถบด้านข้าง จะทำการประกาศ items เมนูไว้ข้างบนแล้วดึงมาใช้ ใน <Menu/>*/}
 
+            <Layout className="site-layout">
+                {/* <Header>
+                    <div className="logo" />
+                    <Menu
+                        theme="dark"
+                        mode="horizontal"
+                        defaultSelectedKeys={['2']}
+                        items={new Array().fill(null).map((_, index) => {
+                            const key = index + 1;
+                            return {
+                                key,
+                                label: ` ${key}`,
+                            };
+                        })}
+                    />
+                </Header> */}
+                {/*Header แถบด้านบน กำหนดจำนวนโดยใช้  Array(X) ว่าต้องการเมนูอีกตัว */}
 
+                <Content style={{  margin: '0 16px',}}>
+                    <Breadcrumb style={{ margin: '16px 0', }} >
+                        <Breadcrumb.Item>User</Breadcrumb.Item>
+                        <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                    </Breadcrumb>
+                    <div className="site-layout-background" style={{ padding: 40,minHeight: 460,}}>
+                        Bill is a cat.
+                    </div>
+                </Content>
+                 {/*Content ส่วนเนื้อตรงกลาง */}
+
+                <Footer style={{ textAlign: 'center', }} >
+                    Build ตอนไหนตื่นเต้นทุกที่
+                </Footer>
+
+            </Layout>
+        </Layout>
+    );
+};
+export default App;
