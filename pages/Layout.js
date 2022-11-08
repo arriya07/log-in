@@ -1,6 +1,5 @@
 import 'antd/dist/antd.css'
 import {
-    DesktopOutlined,
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons';
@@ -8,19 +7,20 @@ import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useState } from 'react';
 
 
+
 const { Header, Content, Footer, Sider } = Layout;
-function getItem(label, key, icon, children,link) {
+function getItem(label, key, icon, children,Link) {
     return {
         key,
         icon,
         children,
         label,
-        link,
+        Link,
     };
 }
 const items = [
     getItem('NemeUser','0',),
-    getItem('User Profil','1',<UserOutlined />,<Link to="/profile" replace />),
+    getItem('Usere Profil','1',<UserOutlined />,<link href={"/profile"}/>),
     getItem('Team', 'sub2', <TeamOutlined />, 
     [getItem('Team 1', '6'), 
     getItem('Team 2', '8')]),
