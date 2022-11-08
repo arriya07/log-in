@@ -43,7 +43,7 @@ const App = () => {
             {/*Sider แถบด้านข้าง จะทำการประกาศ items เมนูไว้ข้างบนแล้วดึงมาใช้ ใน <Menu/>*/}
 
             <Layout className="site-layout">
-                <Header>
+                {/* <Header>
                     <div className="logo" />
                     <Menu
                         theme="dark"
@@ -57,7 +57,7 @@ const App = () => {
                             };
                         })}
                     />
-                </Header>
+                </Header> */}
                 {/*Header แถบด้านบน กำหนดจำนวนโดยใช้  Array(X) ว่าต้องการเมนูอีกตัว */}
 
                 <Content style={{  margin: '0 16px',}}>
