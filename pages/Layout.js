@@ -49,7 +49,7 @@ const App = () => {
                         theme="dark"
                         mode="horizontal"
                         defaultSelectedKeys={['2']}
-                        items={new Array(1).fill(null).map((_, index) => {
+                        items={new Array().fill(null).map((_, index) => {
                             const key = index + 1;
                             return {
                                 key,
