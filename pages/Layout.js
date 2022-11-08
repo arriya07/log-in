@@ -23,12 +23,11 @@ export default function Home() {
               defaultSelectedKeys={['1']}
               items={[
                 {
-                  key: '/profile',
+                  key: '1',
                   icon: <UserOutlined />,
-                  label: 'nav 1',
+                  label: 'Profile',
+                  Link :<Link to="/profile"/>
                   
-
-
                 },
                 {
                   key: '2',
