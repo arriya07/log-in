@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import 'antd/dist/antd.css'
@@ -11,6 +10,7 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 const { Header, Sider, Content } = Layout;
 
 export default function Profile() {
@@ -75,7 +75,20 @@ export default function Profile() {
             })}
           </Header>
           <Content className="site-layout-background"  style={{  margin: '24px 16px',  padding: 24, }}>
-            Content
+          <div style={{ textAlign: "center" }} >
+                
+                <Head>
+                    <title>My Profile</title>
+                </Head>
+                <h1>Profile</h1>
+                    {profile.pictureUrl && <Image
+                        src={profile.pictureUrl}
+                        alt={profile.displayName}
+                        width={400}
+                        height={400}
+                    />}
+                    <div>Name: {profile.displayName}</div>
+                </div>
           </Content>
         </Layout>
       </Layout>
