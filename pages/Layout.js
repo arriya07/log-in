@@ -9,10 +9,33 @@ import {
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
 import Link from 'next/link'
-const { Header, Sider, Content } = Layout;
 
-export default function Home() {
-  const [collapsed, setCollapsed] = useState(false);
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+
+export default function Profile() {
+  const [profile, setProfile] = useState({}) //useState เป็นการเรียกใช้งาน state และ การเปลี่ยนแปลงค่า state
+  let liff
+  useEffect(() => {
+      liff = require('@line/liff')
+      const lineliff = async () => {
+          try {
+              await liff.init({ liffId: `${process.env.NEXT_PUBLIC_LIFF_ID}` }); //
+          } catch (error) {
+              console.error('liff init error', error.message)
+          }
+          if (!liff.isLoggedIn()) {
+              liff.login();
+          }
+          const profile = await liff.getProfile()
+          setProfile(profile)
+      }
+      lineliff()
+  })
+
+const { Header, Sider, Content } = Layout;
+const [collapsed, setCollapsed] = useState(false);
   return (
       <Layout className="layout">
         <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -54,16 +77,25 @@ export default function Home() {
               onClick: () => setCollapsed(!collapsed),
             })}
           </Header>
-          <Content
-              className="site-layout-background"
-              style={{
-                margin: '24px 16px',
-                padding: 24,
-              }}
-          >
-            Content
+          <Content className="site-layout-background"  style={{  margin: '24px 16px',  padding: 24, }}>
+          <section>
+            <div style={{ textAlign: "center" }} >
+            <Head>
+                <title>My Profile</title>
+            </Head>
+            <h1>Profile</h1>
+                {profile.pictureUrl && <Image
+                    src={profile.pictureUrl}
+                    alt={profile.displayName}
+                    width={400}
+                    height={400}
+                />}
+                <div>Name: {profile.displayName}</div>
+            </div>
+        </section>
           </Content>
         </Layout>
       </Layout>
   )
+
 }
