@@ -10,7 +10,6 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
-import React, { useState } from 'react';
 import Link from 'next/link'
 const { Header, Sider, Content } = Layout;
 
