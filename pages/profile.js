@@ -35,9 +35,7 @@ export default function Profile() {
     })
 
   return (
-        <section>
-            <div style={{ textAlign: "center" }} >
-            <Layout className="layout">
+<Layout className="layout">
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
           <Menu
@@ -82,18 +80,7 @@ export default function Profile() {
           </Content>
         </Layout>
       </Layout>
-            <Head>
-                <title>My Profile</title>
-            </Head>
-            <h1>Profile</h1>
-                {profile.pictureUrl && <Image
-                    src={profile.pictureUrl}
-                    alt={profile.displayName}
-                    width={400}
-                    height={400}
-                />}
-                <div>Name: {profile.displayName}</div>
-            </div>
-        </section>
+          
+
     )
 }
